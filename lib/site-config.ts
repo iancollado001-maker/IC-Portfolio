@@ -175,7 +175,7 @@ export const education: EducationItem[] = [
     period: "A.Y. 2025–2026",
     location: "Midsayap, Cotabato",
     description:
-      "Undergraduate program in computer science, with hands-on application of development skills through a research-based thesis project in predictive analytics.",
+      "Graduated program in computer science, with hands-on application of development skills through a research-based thesis project in predictive analytics.",
     highlights: [
       "Thesis: GradeTrack — a logistic regression-based model for forecasting college graduation likelihood in the CITE programs",
       "Developed applications across web, desktop, and mobile platforms using PHP, C#, and .NET technologies",
