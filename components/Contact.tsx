@@ -76,7 +76,7 @@ export default function Contact() {
               ) : (
                 <div className="flex items-center gap-3 rounded-xl border border-dashed border-border p-4 text-sm text-muted">
                   <Linkedin className="h-4 w-4" />
-                  LinkedIn — add profile link in site-config.ts
+                  LinkedIn — Not yet available. Please reach out via email or GitHub.
                 </div>
               )}
             </div>
