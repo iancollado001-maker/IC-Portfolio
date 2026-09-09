@@ -37,7 +37,7 @@ export type SkillCategory = {
 export const skillCategories: SkillCategory[] = [
   {
     title: "Programming & Web",
-    skills: ["JavaScript", "HTML", "CSS", "PHP", "SQL", "C#"],
+    skills: ["JavaScript", "HTML", "CSS", "PHP", "SQL", "C#", "Python"],
   },
   {
     title: "Frameworks & Platforms",
