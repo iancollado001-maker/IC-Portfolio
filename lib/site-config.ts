@@ -41,11 +41,11 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Frameworks & Platforms",
-    skills: ["ASP.NET Core", "Laravel", "Xamarin"],
+    skills: ["ASP.NET Core", "Laravel", "Xamarin", "Next.js"],
   },
   {
     title: "Tools",
-    skills: ["GitHub", "Microsoft Visual Studio", "VS Code"],
+    skills: ["GitHub", "Microsoft Visual Studio", "VS Code", "Supabase"],
   },
   {
     title: "Additional Skills",
