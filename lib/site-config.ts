@@ -163,6 +163,10 @@ export const projects: Project[] = [
     badge: "POS & Ordering System",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
     liveUrl: "https://pos-weld-three.vercel.app/",
+    image: "/projects/arcane-estate-coffee.png",
+    imageAlt: "Arcane Estate Coffee order-ahead menu and cart",
+    imageHover: "/projects/arcane-estate-coffee-admin.png",
+    imageHoverAlt: "Arcane Estate Coffee checkout with pickup/delivery and payment options",
     description:
       "A point-of-sale and order-ahead web app built for a specialty coffee roastery in Lapu-Lapu City, Cebu. Customers browse the menu, place orders for pickup or delivery, and pay by cash or GCash without creating an account, while the business tracks orders end-to-end on a Supabase-backed data layer.",
     highlights: [
