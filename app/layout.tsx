@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { personal } from "@/lib/site-config";
 import PageTransition from "@/components/PageTransition";
+import { DeveloperFooter } from "@/components/layout/developer-footer";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -53,27 +54,11 @@ export const metadata: Metadata = {
     siteName: "Ian L. Collado Portfolio",
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Ian L. Collado — Software Developer Portfolio",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.png"],
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/apple-touch-icon.png",
   },
   robots: {
     index: true,
@@ -133,6 +118,7 @@ export default function RootLayout({
         className={`${display.variable} ${body.variable} ${mono.variable} font-body antialiased`}
       >
         <PageTransition>{children}</PageTransition>
+        <DeveloperFooter />
       </body>
     </html>
   );

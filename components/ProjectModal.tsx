@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { Github, X, Award } from "lucide-react";
+import { ExternalLink, Github, X, Award } from "lucide-react";
 import type { Project } from "@/lib/site-config";
 
 export default function ProjectModal({
@@ -156,15 +156,34 @@ export default function ProjectModal({
                 </div>
               )}
 
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
-              >
-                <Github className="h-4 w-4" />
-                View Repository
-              </a>
+              <div className="flex flex-wrap gap-3">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Visit Live Site
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={
+                      project.liveUrl
+                        ? "inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground hover:text-background"
+                        : "inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+                    }
+                  >
+                    <Github className="h-4 w-4" />
+                    View Repository
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
         </motion.div>

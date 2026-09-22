@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Github } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
 import ProjectModal from "./ProjectModal";
 import { projects, type Project } from "@/lib/site-config";
 
@@ -57,8 +57,9 @@ export default function Projects() {
             Projects
           </h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-            A thesis project applying predictive analytics to education,
-            and a training-ground inventory system built on the job.
+            A thesis project applying predictive analytics to education, a
+            training-ground inventory system built on the job, and a live
+            point-of-sale app for a coffee business.
           </p>
         </motion.div>
 
@@ -147,7 +148,7 @@ export default function Projects() {
                   onMouseEnter={() => setHovered(true)}
                   onMouseLeave={() => setHovered(false)}
                 >
-                  {active.image && (
+                  {active.image ? (
                     <div className="relative aspect-[21/10] w-full">
                       <Image
                         src={active.image}
@@ -176,6 +177,12 @@ export default function Projects() {
                           />
                         </motion.div>
                       )}
+                    </div>
+                  ) : (
+                    <div className="relative flex aspect-[21/10] w-full items-center justify-center bg-grid-pattern">
+                      <span className="rounded-full border border-border bg-background px-4 py-2 font-mono text-[11px] tracking-wide text-muted">
+                        NO PREVIEW IMAGE — VIEW LIVE DEMO BELOW
+                      </span>
                     </div>
                   )}
                   {active.imageHover && (
@@ -296,15 +303,28 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-auto flex flex-wrap items-center justify-end gap-3 border-t border-border pt-5 lg:mt-8">
-                    <a
-                      href={active.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground hover:text-background"
-                    >
-                      <Github className="h-4 w-4" />
-                      GitHub
-                    </a>
+                    {active.liveUrl && (
+                      <a
+                        href={active.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground hover:text-background"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Live Demo
+                      </a>
+                    )}
+                    {active.github && (
+                      <a
+                        href={active.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground hover:text-background"
+                      >
+                        <Github className="h-4 w-4" />
+                        GitHub
+                      </a>
+                    )}
                     <button
                       type="button"
                       onClick={() => setModalProject(active)}

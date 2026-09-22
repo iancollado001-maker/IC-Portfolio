@@ -36,12 +36,12 @@ export default function Footer() {
             <ul className="mt-5 space-y-2.5">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <a
+                  <Link
                     href={item.href}
                     className="text-sm text-muted transition-colors hover:text-foreground"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -98,13 +98,13 @@ export default function Footer() {
           <p className="font-mono text-[11px] text-muted">
             Built with Next.js · TypeScript · Tailwind CSS
           </p>
-          <a
+          <Link
             href="/#home"
             className="inline-flex items-center gap-1.5 font-mono text-[11px] text-muted transition-colors hover:text-foreground"
           >
             BACK TO TOP
             <ArrowUp className="h-3 w-3" />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

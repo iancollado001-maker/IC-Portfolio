@@ -79,7 +79,8 @@ export type Project = {
   badge: string;
   featured?: boolean;
   technologies: string[];
-  github: string;
+  github?: string;
+  liveUrl?: string;
   description: string;
   highlights: string[];
   image?: string;
@@ -154,6 +155,22 @@ export const projects: Project[] = [
       "Tool monitoring",
       "Damaged-item monitoring",
       "User-friendly interfaces",
+    ],
+  },
+  {
+    slug: "arcane-estate-coffee",
+    title: "Arcane Estate Coffee",
+    badge: "POS & Ordering System",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+    liveUrl: "https://pos-weld-three.vercel.app/",
+    description:
+      "A point-of-sale and order-ahead web app built for a specialty coffee roastery in Lapu-Lapu City, Cebu. Customers browse the menu, place orders for pickup or delivery, and pay by cash or GCash without creating an account, while the business tracks orders end-to-end on a Supabase-backed data layer.",
+    highlights: [
+      "Order-ahead menu and cart",
+      "Pickup and delivery fulfillment",
+      "Order tracking",
+      "Cash and GCash payment options",
+      "Supabase-backed order data",
     ],
   },
 ];
