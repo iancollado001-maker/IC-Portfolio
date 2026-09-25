@@ -6,3 +6,8 @@ out
 .vercel
 *.log
 .DS_Store
+
+# test output
+/test-results
+/playwright-report
+/playwright/.cache

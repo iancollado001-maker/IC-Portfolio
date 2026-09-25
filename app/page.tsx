@@ -1,5 +1,5 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Overview from "@/components/Overview";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -11,9 +11,9 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main>
         <Hero />
+        <Overview />
         <About />
         <Skills />
         <Projects />

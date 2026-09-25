@@ -5,7 +5,9 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
 import ProjectModal from "./ProjectModal";
-import { projects, type Project } from "@/lib/site-config";
+import SectionPanel from "./ui/SectionPanel";
+import { projects, sectionIntros, type Project } from "@/lib/site-config";
+import { sectionIcons } from "@/lib/section-icons";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -40,36 +42,20 @@ export default function Projects() {
   }, [next, prev, modalProject]);
 
   return (
-    <section id="projects" className="border-b border-border py-24">
-      <div className="mx-auto max-w-content px-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
-        >
-          <div className="flex items-center gap-2 font-mono text-[11px] tracking-wide text-muted">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-signal" />
-            FEATURED WORK
-          </div>
-          <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-            Projects
-          </h2>
-          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-            A thesis project applying predictive analytics to education, a
-            training-ground inventory system built on the job, and a live
-            point-of-sale app for a coffee business.
-          </p>
-        </motion.div>
-
+    <SectionPanel
+      id="projects"
+      icon={sectionIcons.projects}
+      eyebrow="FEATURED WORK"
+      title="Projects"
+      description={sectionIntros.projects}
+    >
         {/* Selector */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.08 }}
-          className="mt-10 flex items-center justify-between gap-6"
+          className="flex items-center justify-between gap-6"
         >
           <div className="thin-scroll -mx-1 flex gap-2 overflow-x-auto px-1">
             {projects.map((p, i) => (
@@ -81,7 +67,7 @@ export default function Projects() {
                 className={`relative shrink-0 rounded-full border px-4 py-2 font-mono text-xs transition-colors duration-200 ${
                   i === index
                     ? "border-transparent text-background"
-                    : "border-border text-muted hover:text-foreground"
+                    : "border-border bg-card text-muted hover:text-foreground"
                 }`}
               >
                 {i === index && (
@@ -107,7 +93,7 @@ export default function Projects() {
                 type="button"
                 onClick={prev}
                 aria-label="Previous project"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border transition-colors hover:bg-foreground hover:text-background"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card transition-colors hover:bg-foreground hover:text-background"
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
@@ -115,7 +101,7 @@ export default function Projects() {
                 type="button"
                 onClick={next}
                 aria-label="Next project"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border transition-colors hover:bg-foreground hover:text-background"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card transition-colors hover:bg-foreground hover:text-background"
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
@@ -144,7 +130,7 @@ export default function Projects() {
                 <div className="flex min-w-0 flex-col gap-6">
                 {/* Screenshot container — sized to show the whole image */}
                 <figure
-                  className="group relative overflow-hidden rounded-2xl border border-border bg-background"
+                  className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-soft"
                   onMouseEnter={() => setHovered(true)}
                   onMouseLeave={() => setHovered(false)}
                 >
@@ -248,7 +234,7 @@ export default function Projects() {
                 </div>
 
                 {/* Details container — independent of the image */}
-                <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 lg:p-10">
+                <div className="rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8 lg:p-10">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <span className="rounded-full border border-border px-3 py-1 font-mono text-[10px] tracking-wide text-muted">
                       {active.badge.toUpperCase()}
@@ -266,14 +252,14 @@ export default function Projects() {
                   </p>
 
                   <div className="mt-6">
-                    <div className="font-mono text-[11px] tracking-wide text-muted">
+                    <div className="font-mono text-[11px] tracking-wide text-accent-text">
                       TECHNOLOGY STACK MATRIX
                     </div>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {active.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-full border border-border bg-background px-3 py-1.5 font-mono text-xs text-foreground/80 transition-colors hover:border-foreground/50"
+                          className="rounded-full border border-border bg-panel px-3 py-1.5 font-mono text-xs text-foreground/80 transition-colors hover:border-foreground/50"
                         >
                           {tech}
                         </span>
@@ -282,14 +268,14 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-6">
-                    <div className="font-mono text-[11px] tracking-wide text-muted">
+                    <div className="font-mono text-[11px] tracking-wide text-accent-text">
                       KEY HIGHLIGHTS
                     </div>
                     <div className="mt-3 grid gap-2 sm:grid-cols-2">
                       {active.highlights.map((h, i) => (
                         <div
                           key={h}
-                          className="flex items-start gap-3 rounded-xl border border-border bg-background p-3"
+                          className="flex items-start gap-3 rounded-xl border border-border bg-panel p-3"
                         >
                           <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border font-mono text-[10px] text-muted">
                             {pad(i + 1)}
@@ -338,12 +324,11 @@ export default function Projects() {
             </motion.div>
           </AnimatePresence>
         </motion.div>
-      </div>
 
       <ProjectModal
         project={modalProject}
         onClose={() => setModalProject(null)}
       />
-    </section>
+    </SectionPanel>
   );
 }

@@ -1,14 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { personal } from "@/lib/site-config";
 import PageTransition from "@/components/PageTransition";
+import Sidebar from "@/components/Sidebar";
+import BackgroundLines from "@/components/BackgroundLines";
 import { DeveloperFooter } from "@/components/layout/developer-footer";
 
-const display = Space_Grotesk({
+const display = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
 const body = Inter({
@@ -68,8 +70,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#faf9f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#08090a" },
+    { media: "(prefers-color-scheme: light)", color: "#f1f0ea" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0f1d" },
   ],
   colorScheme: "light dark",
 };
@@ -117,8 +119,18 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${body.variable} ${mono.variable} font-body antialiased`}
       >
-        <PageTransition>{children}</PageTransition>
-        <DeveloperFooter />
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-sm focus:text-background"
+        >
+          Skip to content
+        </a>
+        <BackgroundLines />
+        <Sidebar />
+        <div id="content" className="relative lg:pl-sidebar">
+          <PageTransition>{children}</PageTransition>
+          <DeveloperFooter />
+        </div>
       </body>
     </html>
   );

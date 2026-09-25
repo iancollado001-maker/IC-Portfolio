@@ -16,6 +16,17 @@ const config: Config = {
         card: "var(--card)",
         "card-foreground": "var(--card-foreground)",
         signal: "var(--signal)",
+        panel: "var(--panel)",
+        accent: "var(--accent)",
+        "accent-text": "var(--accent-text)",
+        "accent-soft": "var(--accent-soft)",
+        success: "var(--success)",
+      },
+      boxShadow: {
+        soft: "var(--shadow)",
+      },
+      spacing: {
+        sidebar: "17.5rem",
       },
       fontFamily: {
         display: ["var(--font-display)"],

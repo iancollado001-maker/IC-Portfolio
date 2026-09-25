@@ -6,11 +6,13 @@ export const personal = {
   role: "Software Developer",
   tagline: "Computer Science Graduate • Software Developer • IT Support",
   location: "Midsayap, Cotabato, Philippines",
-  email: "iancollado76@gmail.com",
+  email: "iancollado001@gmail.com",
   github: "https://github.com/iancollado001-maker",
   githubUsername: "iancollado001-maker",
   linkedin: "", // add LinkedIn URL when available — leave blank to hide
   resumePath: "/resume/Ian-Collado-Resume.pdf",
+  photo: "/images/profile.jpg",
+  photoAlt: "Portrait of Ian L. Collado",
   intro:
     "Computer Science graduate with practical experience developing and deploying web, desktop, and mobile applications, with a strong interest in software development and building solutions that address real-world needs.",
 };
@@ -20,6 +22,16 @@ export const availability = {
   isAvailable: true,
   label: "AVAILABLE FOR OPPORTUNITIES",
   unavailableLabel: "NOT CURRENTLY AVAILABLE",
+};
+
+// One-line section intros, shared by the home overview cards and the full sections.
+export const sectionIntros = {
+  about:
+    "A Computer Science graduate who learns by building — and by keeping systems running when things break.",
+  projects:
+    "A thesis project applying predictive analytics to education, a training-ground inventory system built on the job, and a live point-of-sale app for a coffee business.",
+  contact:
+    "Open to opportunities in software development and IT support. Reach out through any of the channels below.",
 };
 
 export const developerProfile = {
@@ -244,6 +256,9 @@ export const awards: Award[] = [
     period: "A.Y. 2022–2025",
   },
 ];
+
+export const totalSkillCount = skillCategories.reduce((n, c) => n + c.skills.length, 0);
+export const skillsSummary = `${totalSkillCount} skills across ${skillCategories.length} categories`;
 
 export const nav = [
   { label: "Home", href: "/#home" },
