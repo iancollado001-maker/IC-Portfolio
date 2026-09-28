@@ -9,7 +9,7 @@ export const personal = {
   email: "iancollado001@gmail.com",
   github: "https://github.com/iancollado001-maker",
   githubUsername: "iancollado001-maker",
-  linkedin: "", // add LinkedIn URL when available — leave blank to hide
+  linkedin: "https://www.linkedin.com/in/ian-collado-9b72b443b/", // add LinkedIn URL when available — leave blank to hide
   resumePath: "/resume/Ian-Collado-Resume.pdf",
   photo: "/images/profile.jpg",
   photoAlt: "Portrait of Ian L. Collado",
