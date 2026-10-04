@@ -94,7 +94,7 @@ export default function Contact() {
               <span className={iconBadge}>
                 <Linkedin className="h-4 w-4" />
               </span>
-              LinkedIn
+              LinkedIn - Ian Collado
             </a>
           ) : (
             <div className="flex items-center gap-3 rounded-2xl border border-dashed border-border p-4 text-sm text-muted">
