@@ -10,6 +10,7 @@ export const personal = {
   github: "https://github.com/iancollado001-maker",
   githubUsername: "iancollado001-maker",
   linkedin: "https://www.linkedin.com/in/ian-collado-9b72b443b/", // add LinkedIn URL when available — leave blank to hide
+  linkedinUsername: "Ian Collado",
   resumePath: "/resume/Ian-Collado-Resume.pdf",
   photo: "/images/profile.jpg",
   photoAlt: "Portrait of Ian L. Collado",
@@ -57,7 +58,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Tools & Platforms",
-    skills: ["GitHub", "Microsoft Visual Studio", "VS Code", "Supabase"],
+    skills: ["GitHub", "Microsoft Visual Studio", "VS Code", "PostgreSQL", "Vercel"],
   },
   {
     title: "Additional Skills",

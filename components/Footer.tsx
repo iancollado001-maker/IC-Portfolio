@@ -82,7 +82,7 @@ export default function Footer() {
                     className="inline-flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-foreground"
                   >
                     <Linkedin className="h-4 w-4" />
-                    LinkedIn
+                    {personal.linkedinUsername}
                   </a>
                 </li>
               )}
