@@ -3,7 +3,7 @@
 
 export const personal = {
   name: "Ian L. Collado",
-  role: "Software Developer",
+  role: "Junior Software Developer | IT Support",
   tagline: "Computer Science Graduate • Software Developer • IT Support",
   location: "Midsayap, Cotabato, Philippines",
   email: "iancollado001@gmail.com",
@@ -15,7 +15,7 @@ export const personal = {
   photo: "/images/profile.jpg",
   photoAlt: "Portrait of Ian L. Collado",
   intro:
-    "Computer Science graduate with practical experience developing and deploying web, desktop, and mobile applications, with a strong interest in software development and building solutions that address real-world needs.",
+    "Computer Science graduate with practical knowledge in developing and deploying web, desktop, and mobile applications, with a strong interest in software development and building solutions that address real-world needs.",
 };
 
 // Edit this one flag to change the hero availability indicator.
