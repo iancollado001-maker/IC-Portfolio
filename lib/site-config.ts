@@ -258,6 +258,11 @@ export const awards: Award[] = [
     subtitle: "Notre Dame of Midsayap College, Bachelor of Science in Computer Science",
     period: "A.Y. 2022–2025",
   },
+  {
+    title: "Career Service Professional Eligibility Certificate ",
+    subtitle: "Civil Service Commission, Philippines",
+    period: "Issued 2026",
+  },
 ];
 
 export const totalSkillCount = skillCategories.reduce((n, c) => n + c.skills.length, 0);
