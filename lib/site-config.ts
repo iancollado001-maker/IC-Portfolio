@@ -250,10 +250,12 @@ export const awards: Award[] = [
   },
   {
     title: "Class Valedictorian",
+    subtitle: "Villaria High School, ABM Strand",
     period: "A.Y. 2021–2022",
   },
   {
     title: "Dean's Lister",
+    subtitle: "Notre Dame of Midsayap College, Bachelor of Science in Computer Science",
     period: "A.Y. 2022–2025",
   },
 ];
